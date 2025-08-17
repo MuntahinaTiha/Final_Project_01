@@ -67,7 +67,7 @@
 
 
     <!-- =============== HEADING TWO START ==================== -->
-    <section id="secondary_heading" class="py-3">
+    <section id="secondary_heading" class="py-3 d-none d-lg-block">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-3">
@@ -92,7 +92,7 @@
                         <div class="shopping_bag">
                             <span><iconify-icon icon="teenyicons:bag-outline" width="30"
                                     height="30"></iconify-icon></span>
-                                    <span class="count">2</span>
+                            <span class="count">2</span>
                             <div class="shop">
                                 <p class="shopping_text mb-0">Shopping cart:</p>
                                 <b class="price">$57.00</b>
@@ -104,6 +104,201 @@
         </div>
     </section>
     <!-- =============== HEADING TWO END ==================== -->
+
+
+
+    <!-- =============== NAVIGATION START ==================== -->
+    <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary p-0">
+        <div class="container">
+
+            <a href="#" class="d-lg-none">
+                <img src="./assets/images/Logo.png" alt="">
+            </a>
+            <div class="d-none d-lg-block">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle category_bar " type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <span><iconify-icon icon="basil:menu-solid" width="24" height="24"></iconify-icon></span>
+                        <span class="main_text">All Categories</span>
+                        <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                height="24"></iconify-icon></span>
+
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="navbar-toggler mobile-menu-bar d-lg-none" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <span><iconify-icon icon="ci:menu-alt-01" width="28" height="28"></iconify-icon></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                                <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                        height="24"></iconify-icon></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">HOMEPAGE 01</a></li>
+                                <li><a class="dropdown-item" href="#">HOMEPAGE 02</a></li>
+                                <li><a class="dropdown-item" href="#">HOMEPAGE 03</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Shop
+                                <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                        height="24"></iconify-icon></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">SHOP 01</a></li>
+                                <li><a class="dropdown-item" href="#">SHOP 02</a></li>
+                                <li><a class="dropdown-item" href="#">SHOP 03</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                                <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                        height="24"></iconify-icon></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">PAGE 01</a></li>
+                                <li><a class="dropdown-item" href="#">PAGE 02</a></li>
+                                <li><a class="dropdown-item" href="#">PAGE 03</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Blog
+                                <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                        height="24"></iconify-icon></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">BLOG 01</a></li>
+                                <li><a class="dropdown-item" href="#">BLOG 02</a></li>
+                                <li><a class="dropdown-item" href="#">BLOG 03</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+                </ul>
+
+                <div class="phone">
+                    <span><iconify-icon icon="line-md:phone-call-loop" width="23" height="23"></iconify-icon></span>
+                    <a href="tel:(219) 555-0114">(219) 555-0114</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- =============== NAVIGATION END ==================== -->
+
+
+
+    <!-- =============== OFFCANVAS START ==================== -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <a href="#"><img src="./assets/images/Logo.png" alt=""></a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+            <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                            <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                    height="24"></iconify-icon></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">HOMEPAGE 01</a></li>
+                            <li><a class="dropdown-item" href="#">HOMEPAGE 02</a></li>
+                            <li><a class="dropdown-item" href="#">HOMEPAGE 03</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop
+                            <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                    height="24"></iconify-icon></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">SHOP 01</a></li>
+                            <li><a class="dropdown-item" href="#">SHOP 02</a></li>
+                            <li><a class="dropdown-item" href="#">SHOP 03</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                            <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                    height="24"></iconify-icon></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">PAGE 01</a></li>
+                            <li><a class="dropdown-item" href="#">PAGE 02</a></li>
+                            <li><a class="dropdown-item" href="#">PAGE 03</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle dropdown-link" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog
+                            <span><iconify-icon icon="iconamoon:arrow-down-2-light" width="24"
+                                    height="24"></iconify-icon></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">BLOG 01</a></li>
+                            <li><a class="dropdown-item" href="#">BLOG 02</a></li>
+                            <li><a class="dropdown-item" href="#">BLOG 03</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item mobile-menu-last"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item mobile-menu-last"><a href="#" class="nav-link">Contact Us</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- =============== OFFCANVAS END ==================== -->
 
     <!-- JQUERY -->
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
