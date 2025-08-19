@@ -6,11 +6,12 @@
     #nav {
         padding: 10px 0 !important;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        background-color: var(--gray-scale-white);
     }
 
     .offcanvas-body .dropdown-link {
         background-color: transparent;
-        color: var(--branding-success);
+        color: var(--gray-scale-gray---700);
         width: 100%;
         margin-bottom: 4px;
         border: none;
@@ -50,4 +51,169 @@
     .offcanvas-body .mobile-menu-last {
         padding: 8px 20px;
     }
+
+
+
+    /***** MOBILE FOOTER START *****/
+    #mobile_footer {
+        padding: 15px 0 0 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        border-radius: 0px;
+        background: #fff;
+        box-shadow: 25px 25px 70px #bebebe,
+            -25px 70px rgba(212, 195, 195, 0.01);
+        z-index: 2;
+    }
+
+    #mobile_footer .footer_box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mobile_footer .footer_box span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+    }
+
+    #mobile_footer .img_no {
+        display: inline-block;
+        transform: translateY(-54px)translateX(341px);
+    }
+
+    #mobile_footer .img_no .cart_img {
+        width: 16px;
+        height: 16px;
+    }
+
+    #mobile_footer .footer_box:hover {
+        color: var(--branding-success-dark);
+        transform: translateY(-2px);
+        transition: 0.5s;
+    }
+
+    /***** MOBILE FOOTER END *****/
+
+
+
+    /***** MOBILE SEARCH START *****/
+    #mobile_search {
+        backdrop-filter: blur(5px);
+        height: auto;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 22;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #mobile_search.mobile_search_active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #mobile_search form {
+        position: relative;
+    }
+
+    #mobile_search form input {
+        border: none;
+        border-bottom: 2px solid var(--branding-success);
+        padding-bottom: 10px;
+        width: 100%;
+        background-color: transparent;
+        margin-top: 15%;
+    }
+
+    #mobile_search form input::placeholder {
+        color: var(--branding-success);
+        font-size: 18px;
+    }
+
+    #mobile_search form input:focus {
+        outline: none;
+    }
+
+    #mobile_search form button {
+        position: absolute;
+        right: 0;
+        top: 60%;
+        background: transparent;
+        border: none;
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--branding-success);
+    }
+
+    #mobile_search form .close {
+        background-color: var(--branding-success);
+        color: var(--gray-scale-white);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 50%;
+        top: 0;
+        border-radius: 50%;
+        transform: translateX(50%);
+    }
+
+    #mobile_search .card_box {
+        border-radius: 5px;
+    }
+
+    #mobile_search .card_box .details {
+        padding: 0 15px;
+    }
+
+    #mobile_search .details h4 {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--gren-gray-scale-700);
+    }
+
+    #mobile_search .details b {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--gren-gray-scale-900);
+    }
+
+    #mobile_search .details del {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-decoration: line-through;
+        color: var(--gren-gray-scale-400);
+    }
+
+    #mobile_search .review {
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+
+    #mobile_search .review .star {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        padding-top: 0;
+    }
+    /***** MOBILE SEARCH END *****/
+
 }
