@@ -371,3 +371,264 @@ body {
 }
 
 /***** OFFCANVAS END *****/
+
+
+
+/***** SHOPERY START *****/
+#shopery {
+    padding: 100px 0;
+}
+
+#shopery .content .main {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--branding-success);
+}
+
+#shopery .content h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 120%;
+    color: var(--gren-gray-scale-900);
+    padding-top: 8px;
+}
+
+#shopery .content p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: var(--gren-gray-scale-500);
+    padding-top: 10px;
+    padding-bottom: 22px;
+}
+
+#shopery .content a {
+    text-decoration: none;
+    width: 191px;
+    height: 51px;
+    background: var(--branding-success);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--gray-scale-white);
+    padding: 16px 71px 16px 40px;
+    border-radius: 43px;
+}
+
+#shopery .content {
+    position: relative;
+}
+
+#shopery .content .icon {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    padding-left: 16px;
+    padding-top: 1px;
+    position: absolute;
+
+}
+
+#shopery .content a:hover {
+    background: transparent;
+    border: 1px solid var(--branding-success);
+    color: var(--branding-success);
+    transition: 0.5s ease-in-out;
+}
+
+#shopery .shape {
+    width: 70px;
+    height: 70px;
+    background-color: var(--branding-warning);
+    border-radius: 100%;
+    transform: translateY(-240px)translateX(330px);
+}
+
+#shopery .shape h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--gray-scale-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 14px;
+}
+
+#shopery .shape span {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--gray-scale-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+/***** SHOPERY END *****/
+
+
+/***** CART START *****/
+#cart {
+    padding: 0 0 100px 0;
+}
+
+#cart .shipping {
+    border-radius: 8px 0 0 8px;
+    padding: 40px;
+    width: 240px;
+    height: 222px;
+    border: 1px solid var(--gray-scale-gray---100);
+    background-color: var(--branding-success);
+}
+
+#cart .shipping span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    padding: 10px 0 0 10px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+#cart .shipping .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--gray-scale-gray---100);
+    background: var(--gray-scale-white);
+    position: absolute;
+}
+
+#cart .shipping h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-scale-white);
+}
+
+#cart .shipping p {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 150%;
+    color: var(--gray-scale-white);
+}
+
+#cart .shipping:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+}
+
+#cart .shipping_1 {
+    padding: 40px;
+    width: 240px;
+    height: 222px;
+    border: 1px solid var(--gray-scale-gray---100);
+}
+
+#cart .shipping_1 span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    padding: 13px 0 0 13px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+#cart .shipping_1 .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--gray-scale-gray---100);
+    position: absolute;
+}
+
+#cart .shipping_1 h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---900);
+}
+
+#cart .shipping_1 p {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---400);
+}
+
+#cart .shipping_1:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+}
+
+#cart .shipping_2 {
+    padding: 40px;
+    width: 240px;
+    height: 222px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid var(--gray-scale-gray---100);
+}
+
+#cart .shipping_2 span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    padding: 13px 0 0 13px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+#cart .shipping_2 .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--gray-scale-gray---100);
+    position: absolute;
+}
+
+#cart .shipping_2 h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---900);
+}
+
+#cart .shipping_2 p {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---400);
+}
+
+#cart .shipping_2:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+
+}
+
+/***** CART END *****/
