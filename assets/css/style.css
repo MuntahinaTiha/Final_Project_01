@@ -508,7 +508,7 @@ body {
 
 #shopery .right {
     position: absolute;
-    right: 0;
+    right: -40px;
     top: 42%;
     transform: translateY(42%);
     width: 40px;
@@ -523,9 +523,10 @@ body {
 
 #shopery .left {
     position: absolute;
-    left: 0;
+    left: -40px;
     top: 42%;
     transform: translateY(42%);
+    z-index: 5;
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -536,8 +537,8 @@ body {
     border: 2px solid var(--gray-scale-gray---100);
 }
 
-
 /***** SHOPERY END *****/
+
 
 
 /***** CART START *****/
@@ -817,3 +818,295 @@ body {
 }
 
 /***** PRODUCT END *****/
+
+
+
+/***** DEAL START *****/
+#deal {
+    padding: 0 0 50px 0;
+
+}
+
+#deal .container {
+    background: var(--gren-gray-scale-50);
+    padding: 20px 0;
+    /* background-image: url(../images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+#deal .content {
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+#deal .link {
+    margin-left: 60px;
+}
+
+/* #deal .content_1{
+    padding-left: 340px;
+}  */
+
+#deal .content_1 .time-box .num {
+    text-align: center;
+}
+
+#deal .container .content h6 {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--branding-success);
+}
+
+#deal .container .content h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--gren-gray-scale-900);
+}
+
+#deal .container .content a {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--gray-scale-white);
+    background-color: var(--branding-success);
+    text-decoration: none;
+    padding: 10px 20px 14px 25px;
+    border-radius: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-top: 16px;
+}
+
+#deal .content a span {
+    margin-left: 10px;
+}
+
+#deal .content a:hover {
+    background: transparent;
+    border: 1px solid var(--branding-success);
+    color: var(--branding-success);
+}
+
+#deal .image_1 img {
+    width: 100%;
+}
+
+#deal .image_2 img {
+    width: 100%;
+}
+
+#deal .image_1 {
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+#deal .colon {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    color: var(--gren-gray-scale-500);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    transform: translateY(12px);
+}
+
+.time-box {
+    margin: 2px;
+    display: inline-flex;
+    flex-direction: column;
+    background: var(--gray-scale-white);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--branding-success);
+}
+
+/***** DEAL END *****/
+
+
+
+/*****  FEATURED PRODUCT START *****/
+#f_product {
+    padding: 50px 0;
+}
+
+#f_product .head h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--gren-gray-scale-900);
+    padding-bottom: 30px;
+}
+
+#f_product .f_content h4 {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---700);
+}
+
+#f_product .f_content b {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---900);
+}
+
+#f_product .f_content del {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 150%;
+    text-decoration: line-through;
+    color: var(--gray-scale-gray---400);
+}
+
+#f_product .f_detailts {
+    display: flex;
+}
+
+#f_product .f_detailts .f_content {
+    width: 80%;
+}
+
+#f_product .sec_filter {
+    padding: 20px;
+    border: 1px solid var(--gren-gray-scale-100);
+    position: relative;
+}
+
+#f_product .sec_filter:hover {
+    border: 1px solid var(--branding-success-dark);
+    box-shadow: 0 0 12px 0 rgba(32, 181, 38, 0.32);
+    background: var(--gray-scale-white);
+}
+
+#f_product .rate {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+#f_product .rate li {
+    color: var(--branding-warning);
+    padding-right: 2px;
+}
+
+#f_product .rate li:last-child {
+    color: var(--gray-scale-gray---200);
+}
+
+#f_product .f_bag {
+    width: 35px;
+    height: 35px;
+    padding: 11px 13px 13px 13px;
+    border-radius: 50%;
+    background: var(--gren-gray-scale-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: var(--gren-gray-scale-900);
+    margin-top: 20px;
+}
+
+#f_product .sec_filter:hover .f_bag {
+    background: var(--branding-success);
+    color: var(--gray-scale-white);
+}
+
+#f_product .f_icons {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    transition: 0.5s;
+}
+
+#f_product .f_icons button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid var(--gray-scale-gray---50);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-scale-gray---900);
+    margin-bottom: 5px;
+}
+
+#f_product .f_icons ul {
+    list-style-type: none;
+}
+
+#f_product .f_icons ul button {
+    transform: translateX(-50px);
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#f_product .sec_filter:hover .f_icons ul button {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+#f_product .sec_filter:hover .f_icons ul li:nth-child(2) button {
+    transition-delay: 0.2s;
+}
+
+#f_product .f_offer {
+    border-radius: 4px;
+    padding: 3px 8px;
+    width: 69px;
+    height: 25px;
+    background: var(--branding-error);
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#f_product .sec_filter:hover .f_offer {
+    transform: translateX(10px);
+    visibility: visible;
+    opacity: 1;
+}
+
+#f_product .f_offer h4 {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--gray-scale-white);
+}
+
+#f_product .m-content {
+    padding: 0;
+}
+
+
+/*****  FEATURED PRODUCT END *****/

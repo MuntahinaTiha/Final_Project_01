@@ -26,14 +26,19 @@ $(function () {
     $('.category-button').categoryFilter();
 
 
+    
+    // DEAL SECTION
     // Enable tooltips 
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 
-
-
-
+    $('#countdown').countdown('2026/01/01', function (event) {
+        $('#days').html(event.strftime('%D'));
+        $('#hours').html(event.strftime('%H'));
+        $('#minutes').html(event.strftime('%M'));
+        $('#seconds').html(event.strftime('%S'));
+    });
 
 
 

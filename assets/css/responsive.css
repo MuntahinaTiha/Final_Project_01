@@ -244,6 +244,7 @@ opacity: 0;
     /***** SHOPERY START *****/
     #shopery {
         padding: 10px 0 0 0;
+        overflow: hidden;
     }
 
     #shopery .image img {
@@ -277,11 +278,20 @@ opacity: 0;
 
     /* #shopery span.right.slick-arrow {
         display: none;
-    }
+    } */
 
-    #shopery span.left.slick-arrow {
+    /* #shopery span.left.slick-arrow {
         display: none;
     } */
+    #shopery .left {
+        left: 0px;
+        top: 38%;
+    }
+
+    #shopery .right {
+        right: 0px;
+        top: 38%;
+    }
 
     /***** SHOPERY END *****/
 
@@ -343,9 +353,59 @@ opacity: 0;
     /***** PRODUCT END *****/
 
 
+    /***** DEAL START *****/
+
+    #deal {
+        overflow: hidden;
+        padding: 0 5px;
+    }
+
+    #deal .container {
+        padding: 0;
+    }
+
+    #deal .image_1 img {
+        width: 100%;
+    }
+
+    #deal .image_2 img {
+        width: 100%;
+    }
+
+    #deal .image_1 {
+        margin-left: 0;
+    }
+
+    #deal .container .content h6 {
+        transform: translateX(-50px);
+    }
+
+    #deal .container .content h4 {
+        text-align: left;
+    }
+
+    #deal .countdown-wrapper {
+        padding-left: 0;
+    }
+
+    /***** DEAL END *****/
 
 
 
+
+
+    /*****  FEATURED PRODUCT START *****/
+
+    #f_product {
+        padding: 50px 20px 100px 20px;
+        overflow: hidden;
+    }
+
+    #f_product .head h4 {
+        font-size: 34px;
+    }
+
+    /*****  FEATURED PRODUCT END *****/
 
 
 
