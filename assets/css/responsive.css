@@ -450,10 +450,43 @@ opacity: 0;
 
     
     /***** ADD START *****/
-    #popup {
+    /* #popup {
         display: none;
+    } */
+      .popup-content {
+        width: 90%;
+        padding: 15px;
     }
 
+    .popup-body {
+        flex-direction: column; /* Stack image & text */
+        text-align: center;
+    }
+
+    .popup-img {
+        width: 95%;
+        margin-bottom: 15px;
+    }
+
+    .popup-text h2 {
+        font-size: 30px;
+    }
+
+    .popup-form {
+        flex-direction: column; /* input & button stack */
+    }
+
+    .popup-form button {
+        width: 35%;
+        margin-left: 200px;
+    }
+.dont-show {
+    margin-left: 20px;
+}
+.close-btn{
+    top: 0;
+    right: 6px;
+}
     /***** ADD END *****/
 
 
