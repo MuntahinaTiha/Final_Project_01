@@ -353,6 +353,46 @@ opacity: 0;
     /***** PRODUCT END *****/
 
 
+    /***** MEAL START *****/
+    #meal {
+        padding: 0 0 50px 0;
+    }
+
+    #meal .container {
+        padding: 0 25px;
+    }
+
+    #meal .milk {
+        width: 100%;
+    }
+
+    #meal .drink {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #meal .breakfast {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    #meal .drink p {
+        margin-left: 50px;
+    }
+
+    #meal .drink h4 {
+        margin-left: 50px;
+    }
+
+    #meal .drink a {
+        margin-left: 160px;
+    }
+
+    /***** MEAL END *****/
+
+
+
     /***** DEAL START *****/
 
     #deal {
@@ -408,9 +448,13 @@ opacity: 0;
     /*****  FEATURED PRODUCT END *****/
 
 
+    
+    /***** ADD START *****/
+    #popup {
+        display: none;
+    }
 
-
-
+    /***** ADD END *****/
 
 
 

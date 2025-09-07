@@ -589,7 +589,6 @@ body {
 }
 
 #cart .shipping:hover {
-    transform: translateY(-2px);
     transition: 0.5s ease-in-out;
     background-color: var(--branding-success);
     color: var(--gray-scale-white);
@@ -821,6 +820,205 @@ body {
 
 
 
+/***** MEAL START *****/
+
+#meal {
+    padding: 0 0 100px 0;
+}
+
+#meal .milk {
+    width: calc(33% - 12px);
+    background-image: url(../images/meal/1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 28px 24px;
+    border-radius: 8px;
+}
+
+#meal .milk:hover {
+    transform: translateY(-2px);
+    transition: 0.5s ease-in-out;
+}
+
+#meal .milk h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: justify;
+    color: var(--gray-scale-white);
+}
+
+#meal .milk p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#meal .milk b {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--gray-scale-white);
+}
+
+#meal .milk a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: justify;
+    color: #2286d2;
+    padding: 14px 32px;
+    background: var(--gray-scale-white);
+    border-radius: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+#meal .milk a span {
+    margin-left: 3px;
+}
+
+#meal .milk a:hover {
+    color: var(--branding-success);
+}
+
+#meal .drink {
+    width: calc(33% - 12px);
+    background-image: url(../images/meal/2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 28px 24px;
+    border-radius: 8px;
+}
+
+#meal .drink:hover {
+    transform: translateY(-2px);
+    transition: 0.5s ease-in-out;
+}
+
+#meal .drink p {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--gren-gray-scale-900);
+    padding-left: 110px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+#meal .drink h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+    color: var(--gren-gray-scale-900);
+    padding-left: 110px;
+}
+
+#meal .drink a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: justify;
+    color: #2286d2;
+    padding: 14px 32px;
+    background: var(--gray-scale-white);
+    border-radius: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-left: 102px;
+    margin-top: 10px;
+}
+
+#meal .drink a span {
+    margin-left: 3px;
+}
+
+#meal .drink a:hover {
+    color: var(--branding-success);
+}
+
+#meal .breakfast {
+    width: calc(33% - 12px);
+    background-image: url(../images/meal/3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 28px 24px;
+    border-radius: 8px;
+}
+
+#meal .breakfast:hover {
+    transform: translateY(-2px);
+    transition: 0.5s ease-in-out;
+}
+
+#meal .breakfast p {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--gren-gray-scale-900);
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+#meal .breakfast h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--gren-gray-scale-900);
+}
+
+#meal .breakfast a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: justify;
+    color: #2286d2;
+    padding: 14px 32px;
+    background: var(--gray-scale-white);
+    border-radius: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-top: 10px;
+}
+
+#meal .breakfast span {
+    margin-left: 3px;
+}
+
+#meal .breakfast a:hover {
+    color: var(--branding-success);
+}
+
+/***** MEAL END *****/
+
+
+
 /***** DEAL START *****/
 #deal {
     padding: 0 0 50px 0;
@@ -895,7 +1093,7 @@ body {
 
 #deal .content a:hover {
     background: transparent;
-    border: 1px solid var(--branding-success);
+    outline: 1px solid var(--branding-success);
     color: var(--branding-success);
 }
 
@@ -1108,5 +1306,145 @@ body {
     padding: 0;
 }
 
-
 /*****  FEATURED PRODUCT END *****/
+
+
+
+/***** ADD START *****/
+
+/* Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+}
+
+/* Show popup */
+.popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Popup content */
+.popup-content {
+    background: #fff;
+    border-radius: 8px;
+    width: 700px;
+    max-width: 95%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: popupIn 0.5s ease;
+}
+
+/* Popup entrance animation */
+@keyframes popupIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #444;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content layout */
+.popup-body {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup-img {
+    width: 220px;
+    border-radius: 6px;
+}
+
+.popup-text h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--gray-scale-gray---900);
+}
+
+.popup-text p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--gray-scale-gray---400);
+}
+
+.popup-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-form input:focus {
+    outline: none;
+}
+
+.popup-form input {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 43px;
+    flex: 1;
+    position: relative;
+
+}
+
+.popup-form button {
+    padding: 11px 20px;
+    border: none;
+    background: #28a745;
+    color: #fff;
+    border-radius: 43px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 305px;
+}
+
+.popup-form button:hover {
+    background: #218838;
+}
+
+.dont-show {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-scale-gray---600);
+    margin-left: 100px;
+}
+
+/***** ADD END *****/

@@ -26,7 +26,7 @@ $(function () {
     $('.category-button').categoryFilter();
 
 
-    
+
     // DEAL SECTION
     // Enable tooltips 
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -41,6 +41,23 @@ $(function () {
     });
 
 
+
+
+    // ADVERTISE
+    window.addEventListener("load", function () {
+        const popup = document.getElementById("popup");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // 2 সেকেন্ড পরে popup দেখাবে
+        setTimeout(() => {
+            popup.classList.add("active");
+        }, 1000);
+
+        // close button এ click করলে popup বন্ধ হবে
+        closeBtn.addEventListener("click", () => {
+            popup.classList.remove("active");
+        });
+    });
 
 
 });
