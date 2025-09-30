@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>VenoBox Lightbox Plugin Examples</title>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="dist/venobox.css?v3" rel="stylesheet">
+<style>
+  .container { margin: 100px auto; }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>VenoBox Lightbox Plugin Examples</h1>
+  <div id="carbon-block" style="margin:30px auto"></div>
+<div style="margin:30px auto"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+  <h2>Image Gallery</h2>
+<p>Image gallery (possibility of navigation with keyboard arrows)</p>
+<a id="firstlink" class="venobox" data-gall="gall1" title="Image 1" href="https://www.jqueryscript.net/dummy/1.jpg"><img src="https://www.jqueryscript.net/dummy/1.jpg" width="150"></a>
+<a class="venobox" data-gall="gall1" title="Image 2" href="https://www.jqueryscript.net/dummy/2.jpg"><img src="https://www.jqueryscript.net/dummy/2.jpg" width="150"></a>
+ <a class="venobox" data-gall="gall1" href="https://www.jqueryscript.net/dummy/3.jpg"><img src="https://www.jqueryscript.net/dummy/3.jpg" width="150"></a>
+ <a class="venobox" data-gall="gall1" href="https://www.jqueryscript.net/dummy/4.jpg"><img src="https://www.jqueryscript.net/dummy/4.jpg" width="150"></a>
+ <h2>Various Links</h2>
+<a data-gall="iframe" class="btn btn-primary venoboxframe" data-vbtype="iframe" title="iFrame example" href="http://example.com/">iFrame</a>
+<a data-gall="iframe" title="Google Maps example with custom title and navigation" class="btn btn-info venoboxframe" data-vbtype="iframe" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387142.85004765174!2d-74.25887720257019!3d40.70582992708322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York!5e0!3m2!1sit!2sus!4v1488175057980">Gmaps</a>
+<a class="btn btn-danger venoboxinline" data-gall="gall1" data-title="inline content" data-vbtype="inline" href="#inline-content">Inline</a>
+<a class="btn btn-info venoboxvid" data-gall="gall-video" data-autoplay="true" data-vbtype="video" href="https://vimeo.com/75976293">Vimeo</a>
+ <a class="btn btn-danger venoboxvid" data-gall="gall-video" data-autoplay="true" data-vbtype="video" href="https://youtu.be/bS5P_LAqiVg">YouTube</a>
+
+<div id="inline-content" style="display:none;">
+<div style="background:#fff; width:100%; height:100%; float:left; padding:10px;">
+<h1>Hello world!</h1>
+<p>this is my inline content</p>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script src="dist/venobox.js?v3"></script>
+<script>
+  $('.venobox').venobox({
+        numeratio: true,
+        border: '20px'
+      });
+ $('.venoboxframe').venobox({
+        border: '6px',
+        overlayColor : 'rgba(255,255,255,0.85)',
+        titlePosition : 'bottom',
+        titleColor: '#333',
+        titleBackground: 'transparent',
+        closeColor: '#333',
+        closeBackground: 'transparent',
+                spinner : 'wave'
+    });
+ $('.venoboxvid').venobox({
+        bgcolor: '#000',
+        spinner : 'cube-grid',
+        // cb_post_open : function(obj, gallIndex, thenext, theprev){
+        //     console.log(thenext);
+        // },
+    });
+ $('.venoboxinline').venobox({
+    numeratio: true,
+        framewidth: '400px',
+        frameheight: 'auto',
+        border: '10px',
+        bgcolor: '#f46f00',
+        titleattr: 'data-title',
+        infinigall: true,
+        // cb_init : function(plugin){
+        //     console.log('INIT');
+        //     console.log(plugin);
+        // },
+        // cb_pre_open : function(obj){
+        //     console.log('link obj');
+        //     console.log(obj.data());
+        // },
+        // cb_post_open : function(obj, gallIndex, thenext, theprev){
+        //     console.log('item index');
+        //     console.log(gallIndex);
+        //     console.log('next - prev lenght');
+        //     console.log(thenext.length);
+        //     console.log(theprev.length);
+        // },
+        // cb_pre_close : function(obj, gallIndex, thenext, theprev){
+        //     console.log('item index');
+        //     console.log(gallIndex);
+        // },
+        // cb_post_close : function(){
+        //     console.log('CLOSED');
+        // },
+        // cb_after_nav : function(obj, gallIndex, thenext, theprev){
+        //     console.log('after nav');
+        //     console.log(gallIndex);
+        // }
+
+})
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+</body>
+</html>
