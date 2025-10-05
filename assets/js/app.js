@@ -156,6 +156,49 @@ $(function () {
 
 
 
+ new VenoBox({
+    selector: '.venobox'
+  });
+
+
+
+/*****  START DESCRIPTION *****/
+// Venobox Init
+  new VenoBox({
+    selector: '.venobox'
+  });
+
+  // Slick Slider Init
+  $('.slider').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    adaptiveHeight: true,
+    fade: true,
+    speed: 500,
+    cssEase: 'linear'
+  });
+
+  // Bootstrap Tab with Slick Slide Sync
+  document.querySelectorAll('.nav-link').forEach((btn, index) => {
+    btn.addEventListener('shown.bs.tab', function () {
+      $('.slider').slick('slickGoTo', index);
+    });
+  });
+
+  /*****  END DESCRIPTION *****/
+
+
+
+
+
+
+
+
+
+
+
 
 
 

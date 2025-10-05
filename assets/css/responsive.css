@@ -581,11 +581,18 @@ opacity: 0;
     /***** CLIENT END *****/
 
 
+    /***** VENO BOX VIDEO START *****/
+#vedio {
+    padding: 0px 0 0px 0;
+}
+
+/***** VENO BOX VIDEO END *****/
+
 
     /***** LATEST NEWS START *****/
     #news {
         padding: 0 20px 50px 20px;
-        transform: translateY(-10%);
+        /* transform: translateY(-10%); */
     }
 
     #news .head h4 {
@@ -610,7 +617,7 @@ opacity: 0;
     /***** NEWS LETTER START ***/
 
     #newsletter {
-        transform: translateY(-180%);
+        /* transform: translateY(-180%); */
     }
 
     #newsletter .image img {
@@ -643,7 +650,7 @@ opacity: 0;
     footer {
         overflow: hidden;
         padding: 0 0 100px 0;
-        transform: translateY(4%) !important;
+        /* transform: translateY(4%) !important; */
     }
 
     footer .container {
@@ -699,8 +706,8 @@ opacity: 0;
 
     footer {
         overflow: hidden;
-        padding: 0 0 30px 0;
-        transform: translateY(-44%);
+        padding: 0 0 100px 0;
+        /* transform: translateY(-44%); */
     }
 
     footer .footer_wrap .container {
@@ -766,6 +773,79 @@ opacity: 0;
 
     /***** HOME FOOTER END *****/
 
+
+
+
+/*****  START DESCRIPTION *****/
+.nav-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-tabs .nav-link {
+    font-size: 15px;
+    padding: 10px 10px;
+  }
+
+  .tab-pane {
+    padding: 20px 5px;
+  }
+
+  .video-box img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .video-play {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .feature-box {
+    align-items: center;
+    padding: 12px;
+  }
+
+  .feature-item {
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .review-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .review-content h6 {
+    font-size: 15px;
+  }
+
+  .load-more {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+/*****  END DESCRIPTION *****/
+
+
+
+ /*****  START RELATED PRODUCTS *****/
+ #related_products {
+        padding: 0 5px 50px 5px;
+    }
+
+    #related_products .filter_body {
+        width: 50%;
+        padding: 8px !important;
+    }
+
+    #related_products .head h4 {
+        font-size: 20px;
+    }
+/***** END RELATED PRODUCTS *****/
 
 
 
