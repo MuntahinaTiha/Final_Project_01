@@ -92,13 +92,28 @@
                         </div>
                         <div class="second_divider"></div>
                         <div class="shopping_bag">
-                            <span><iconify-icon icon="teenyicons:bag-outline" width="30"
-                                    height="30"></iconify-icon></span>
-                            <span class="count">2</span>
+                            <!-- <span><iconify-icon icon="teenyicons:bag-outline" width="30" height="30"></iconify-icon></span>
+                            <span class="count">2</span> -->
+
+                            <!-- Cart Icon (toggle manually) -->
+                            <div class="">
+                                <button class="btn position-relative" data-bs-toggle="offcanvas"
+                                    data-bs-target="#cartOffcanvas" style="padding: 0">
+                                    <iconify-icon icon="teenyicons:bag-outline" width="28"></iconify-icon>
+                                    <span id="cartCount" class="count position-absolute start-100  badge">0</span>
+                                </button>
+                            </div>
+
                             <div class="shop">
                                 <p class="shopping_text mb-0">Shopping cart:</p>
-                                <b class="price">$57.00</b>
+                                <b id="cartSubtotalNav" class="price">$0</b>
                             </div>
+
+
+                            <!-- <div class="shop">
+                                <p class="shopping_text mb-0">Shopping cart:</p>
+                                <b class="price">$57.00</b>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -107,6 +122,31 @@
     </section>
     <!-- =============== HEADING TWO END ==================== -->
 
+
+    <!-- =============== CART SIDEBAR START  ==================== -->
+    <!-- Bootstrap Offcanvas Cart -->
+    <div class="offcanvas offcanvas-end p-3" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Shopping Cart (<span id="itemCount">0</span>)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="cartItems" class="cart-items flex-grow-1"></div>
+
+            <div class="cart-footer border-top pt-3">
+                <div class="d-flex justify-content-between">
+                    <span id="productCount">0 Product</span>
+                    <strong id="cartTotal">$0.00</strong>
+                </div>
+                <div class="mt-3 d-grid gap-2">
+                    <a href="checkout.html" class="btn btn-success rounded-pill py-2">Checkout</a>
+                    <a href="cart.html" class="btn btn-outline-success rounded-pill py-2">Go To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =============== CART SIDEBAR END  ==================== -->
 
 
     <!-- =============== NAVIGATION START ==================== -->
@@ -332,7 +372,9 @@
                 </div>
 
                 <div class="col-3 footer_box">
-                    <span><iconify-icon icon="teenyicons:bag-outline" width="28" height="25"></iconify-icon></span>
+                    <!-- <span><iconify-icon icon="teenyicons:bag-outline" width="28" height="25"></iconify-icon></span> -->
+                    <a href="checkout.html"><iconify-icon icon="teenyicons:bag-outline" width="28"
+                            height="25"></iconify-icon></a>
                     <p class="m-0">Cart</p>
                 </div>
 
@@ -1531,127 +1573,7 @@
 
 
     <!-- =============== IN STOCK START ==================== -->
-    <section id="stock">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="row align-items-center img_details">
-                        <div class="col-lg-3 slider-nav order-lg-1 order-2">
-                            <div class="img_wrap">
-                                <img class="img-fluid" src="./assets/images/Stock/5.png" alt="">
-                            </div>
-                            <div class="img_wrap">
-                                <img class="img-fluid" src="./assets/images/Products/8.png" alt="">
-                            </div>
-                            <div class="img_wrap">
-                                <img class="img-fluid" src="./assets/images/Products/3.png" alt="">
-                            </div>
-                            <div class="img_wrap">
-                                <img class="img-fluid" src="./assets/images/Products/4.png" alt="">
-                            </div>
-                            <div class="img_wrap">
-                                <img class="img-fluid" src="./assets/images/Products/7.png" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-9 slider-for order-lg-2 order-1">
-                            <div>
-                                <img class="img-fluid example" src="./assets/images/Stock/5.png" alt="">
-                            </div>
-                            <div>
-                                <img class="img-fluid example" src="./assets/images/Products/8.png" alt="">
-                            </div>
-                            <div>
-                                <img class="img-fluid example" src="./assets/images/Products/3.png" alt="">
-                            </div>
-                            <div>
-                                <img class="img-fluid example" src="./assets/images/Products/4.png" alt="">
-                            </div>
-                            <div>
-                                <img class="img-fluid example" src="./assets/images/Products/7.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="product-card">
-
-                        <!-- Title -->
-                        <h2 class="title">
-                            Chinese Cabbage <span class="stock">In Stock</span>
-                        </h2>
-
-                        <!-- Review & SKU -->
-                        <div class="review-sku">
-                            <span class="stars" style="width: 24px; height: 24px;">★★★★★</span>
-                            <span class="review">4 Review</span>
-                            <span class="sku">• SKU: 2,51,594</span>
-                        </div>
-
-                        <!-- Price -->
-                        <div class="price-section">
-                            <span class="old-price">$48.00</span>
-                            <span class="new-price">$17.28</span>
-                            <span class="discount">64% Off</span>
-                        </div>
-
-                        <hr>
-
-                        <!-- Brand & Share -->
-                        <div class="brand-share">
-                            <div class="brand">
-                                <strong>Brand:</strong>
-                                <img src="./assets/images/brand/1.png" alt="brand">
-                            </div>
-                            <div class="share">
-                                <strong>Share item:</strong>
-                                <a href="https://www.facebook.com/share/17SPsfrvxS/"><span><iconify-icon
-                                            icon="jam:facebook" width="24" height="24"></iconify-icon></span></a>
-                                <a
-                                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fmuntahina-islam-tiha-733b18376%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZG5YOXBIMDVmTGI0ak1uTQEeOZP_lvt9DCtyp-Se3OLleVkinHUifxRSHkACXGjcokqJJUP6_Q9kmMwhuQI_aem_ue7ZSm9USfAGJjYQ33XFKg&h=AT2_yQUkYBxcCZb-UpZnuyDZn64X5LDqpIuaGEiKXI7cw5SbkdYT0ITLZQCyq5ylYlIg2lTvVU5ibYNrZkj6cNOHmFb9QXdzg6wKCP7AYEd1k63isIA_6VmXZL-J7jIPDNEF"><span><iconify-icon
-                                            icon="ri:twitter-fill" width="24" height="24"></iconify-icon></span></a>
-                                <a
-                                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fmuntahina-islam-tiha-733b18376%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZG5YOXBIMDVmTGI0ak1uTQEeOZP_lvt9DCtyp-Se3OLleVkinHUifxRSHkACXGjcokqJJUP6_Q9kmMwhuQI_aem_ue7ZSm9USfAGJjYQ33XFKg&h=AT2_yQUkYBxcCZb-UpZnuyDZn64X5LDqpIuaGEiKXI7cw5SbkdYT0ITLZQCyq5ylYlIg2lTvVU5ibYNrZkj6cNOHmFb9QXdzg6wKCP7AYEd1k63isIA_6VmXZL-J7jIPDNEF"><span><iconify-icon
-                                            icon="jam:pinterest" width="24" height="24"></iconify-icon></span></a>
-                                <a
-                                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fmuntahina-islam-tiha-733b18376%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZG5YOXBIMDVmTGI0ak1uTQEeOZP_lvt9DCtyp-Se3OLleVkinHUifxRSHkACXGjcokqJJUP6_Q9kmMwhuQI_aem_ue7ZSm9USfAGJjYQ33XFKg&h=AT2_yQUkYBxcCZb-UpZnuyDZn64X5LDqpIuaGEiKXI7cw5SbkdYT0ITLZQCyq5ylYlIg2lTvVU5ibYNrZkj6cNOHmFb9QXdzg6wKCP7AYEd1k63isIA_6VmXZL-J7jIPDNEF"><span><iconify-icon
-                                            icon="proicons:instagram" width="24" height="24"></iconify-icon></span></a>
-                            </div>
-                        </div>
-
-                        <!-- Description -->
-                        <p class="desc">
-                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a
-                            consequat pulvinar.
-                        </p>
-
-                        <hr>
-
-                        <!-- Quantity + Cart -->
-                        <div class="cart-section">
-                            <div class="qty-control">
-                                <button class="qty-btn" id="minus">-</button>
-                                <span id="qty">5</span>
-                                <button class="qty-btn" id="plus">+</button>
-                            </div>
-                            <button class="add-cart"> Add to Cart <span><iconify-icon icon="bitcoin-icons:cart-outline"
-                                        width="24" height="20"></iconify-icon></span></button>
-                            <button class="wishlist"><span><iconify-icon icon="fontisto:heart-alt" width="26"
-                                        height="24"></iconify-icon></span></button>
-                        </div>
-
-                        <hr>
-
-                        <!-- Category & Tags -->
-                        <p><strong>Category:</strong> Vegetables</p>
-                        <p><strong>Tag:</strong> Vegetables Healthy <u>Chinese</u> Cabbage Green Cabbage</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!-- =============== IN STOCK END ==================== -->
 
 
@@ -1825,7 +1747,7 @@
 
 
     <!-- =============== HOME FOOTER START ==================== -->
-     <footer>
+    <footer>
         <div class="footer_wrap">
             <div class="container">
                 <div class="row justify-content-between">
@@ -1907,7 +1829,7 @@
                 <div>
                     <div class="row justify-content-between">
                         <div class="col-lg-3 media pt-3">
-                            <a href="https://www.facebook.com/share/17SPsfrvxS/"><span><iconify-icon icon="jam:facebook"
+                            <a href="https://www.facebook.com/share/19ap6k5GVj/"><span><iconify-icon icon="jam:facebook"
                                         width="24" height="24"></iconify-icon></span></a>
                             <a
                                 href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fmuntahina-islam-tiha-733b18376%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZG5YOXBIMDVmTGI0ak1uTQEeOZP_lvt9DCtyp-Se3OLleVkinHUifxRSHkACXGjcokqJJUP6_Q9kmMwhuQI_aem_ue7ZSm9USfAGJjYQ33XFKg&h=AT2_yQUkYBxcCZb-UpZnuyDZn64X5LDqpIuaGEiKXI7cw5SbkdYT0ITLZQCyq5ylYlIg2lTvVU5ibYNrZkj6cNOHmFb9QXdzg6wKCP7AYEd1k63isIA_6VmXZL-J7jIPDNEF"><span><iconify-icon
@@ -1921,7 +1843,7 @@
                         </div>
 
                         <div class="col-lg-5 pt-3 copyright">
-                            <p>Ecobazar eCommerce © 2021. All Rights Reserved</p>
+                            <p>Ecobazar eCommerce Designed by Muntahina Tiha</p>
                         </div>
 
                         <div class="col-lg-4 pt-3 payment">
@@ -1937,7 +1859,6 @@
         </div>
     </footer>
     <!-- =============== HOME FOOTER END ==================== -->
-
 
 
 

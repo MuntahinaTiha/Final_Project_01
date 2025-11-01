@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <!-- VENO BOX -->
     <link href="./assets/Yet-Another-jQuery-Responsive-Lightbox-Plugin-VenoBox/src/venobox.css" rel="stylesheet" />
-
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- RESPONSIVE CSS -->
@@ -94,13 +93,28 @@
                         </div>
                         <div class="second_divider"></div>
                         <div class="shopping_bag">
-                            <span><iconify-icon icon="teenyicons:bag-outline" width="30"
-                                    height="30"></iconify-icon></span>
-                            <span class="count">2</span>
+                            <!-- <span><iconify-icon icon="teenyicons:bag-outline" width="30" height="30"></iconify-icon></span>
+                            <span class="count">2</span> -->
+
+                            <!-- Cart Icon (toggle manually) -->
+                            <div class="">
+                                <button class="btn position-relative" data-bs-toggle="offcanvas"
+                                    data-bs-target="#cartOffcanvas" style="padding: 0">
+                                    <iconify-icon icon="teenyicons:bag-outline" width="28"></iconify-icon>
+                                    <span id="cartCount" class="count position-absolute start-100  badge">0</span>
+                                </button>
+                            </div>
+
                             <div class="shop">
                                 <p class="shopping_text mb-0">Shopping cart:</p>
-                                <b class="price">$57.00</b>
+                                <b id="cartSubtotalNav" class="price">$0</b>
                             </div>
+
+
+                            <!-- <div class="shop">
+                                <p class="shopping_text mb-0">Shopping cart:</p>
+                                <b class="price">$57.00</b>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -108,6 +122,31 @@
         </div>
     </section>
     <!-- =============== HEADING TWO END ==================== -->
+
+    <!-- =============== CART SIDEBAR START  ==================== -->
+    <!-- Bootstrap Offcanvas Cart -->
+    <div class="offcanvas offcanvas-end p-3" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Shopping Cart (<span id="itemCount">0</span>)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="cartItems" class="cart-items flex-grow-1"></div>
+
+            <div class="cart-footer border-top pt-3">
+                <div class="d-flex justify-content-between">
+                    <span id="productCount">0 Product</span>
+                    <strong id="cartTotal">$0.00</strong>
+                </div>
+                <div class="mt-3 d-grid gap-2">
+                    <a href="checkout.html" class="btn btn-success rounded-pill py-2">Checkout</a>
+                    <a href="cart.html" class="btn btn-outline-success rounded-pill py-2">Go To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =============== CART SIDEBAR END  ==================== -->
 
 
     <!-- =============== NAVIGATION START ==================== -->
@@ -244,7 +283,7 @@
                             <li><a class="dropdown-item" href="#">HOMEPAGE 02</a></li>
                             <li><a class="dropdown-item" href="#">HOMEPAGE 03</a></li>
                         </ul>
-                    </di18
+                    </div>
                 </li>
 
                 <li class="nav-item">
@@ -290,7 +329,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">BLOG 01</a></li>
                             <li><a class="dropdown-item" href="#">BLOG 02</a></li>
-                    18  <li><a class="dropdown-i20m" href="#">BLOG 03</a></li>
+                            <li><a class="dropdown-i20m" href="#">BLOG 03</a></li>
                         </ul>
                     </div>
                 </li>
@@ -388,11 +427,11 @@
                         <div class="brand-share">
                             <div class="brand">
                                 <strong>Brand:</strong>
-                                <img src="./assets/images/brand/1.png" alt="brand">
+                                <img style="height: 50px;" src="./assets/images/brand/1.png" alt="brand">
                             </div>
                             <div class="share">
                                 <strong>Share item:</strong>
-                                <a href="https://www.facebook.com/share/17SPsfrvxS/"><span><iconify-icon
+                                <a href="https://www.facebook.com/share/19ap6k5GVj/"><span><iconify-icon
                                             icon="jam:facebook" width="24" height="24"></iconify-icon></span></a>
                                 <a
                                     href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fmuntahina-islam-tiha-733b18376%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZG5YOXBIMDVmTGI0ak1uTQEeOZP_lvt9DCtyp-Se3OLleVkinHUifxRSHkACXGjcokqJJUP6_Q9kmMwhuQI_aem_ue7ZSm9USfAGJjYQ33XFKg&h=AT2_yQUkYBxcCZb-UpZnuyDZn64X5LDqpIuaGEiKXI7cw5SbkdYT0ITLZQCyq5ylYlIg2lTvVU5ibYNrZkj6cNOHmFb9QXdzg6wKCP7AYEd1k63isIA_6VmXZL-J7jIPDNEF"><span><iconify-icon
@@ -515,7 +554,7 @@
                 </div>
 
                 <!-- Additional Info Tab -->
-                <div class="tab-pane fade" id="info" role="tabpanel"  style="padding-top: 0;">
+                <div class="tab-pane fade" id="info" role="tabpanel" style="padding-top: 0;">
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <ul>
@@ -575,13 +614,16 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div><p>Duis at ullamcorper nulla, eu dictum eros.</p></div>
+                                <div>
+                                    <p>Duis at ullamcorper nulla, eu dictum eros.</p>
+                                </div>
                             </div>
 
                             <div class="col-lg-2 time">2 min ago</div>
                         </div>
 
-                    </div><hr>
+                    </div>
+                    <hr>
 
                     <div class="review">
                         <div class="row justify-content-between">
@@ -601,21 +643,24 @@
                                                         height="14"></iconify-icon></span></li>
                                             <li><span><iconify-icon icon="twemoji:star" width="14"
                                                         height="14"></iconify-icon></span></li>
-                                            <li><span><iconify-icon icon="twemoji:star" width="14"
-                                                        height="14" style="color: #000"></iconify-icon></span></li>
+                                            <li><span><iconify-icon icon="twemoji:star" width="14" height="14"
+                                                        style="color: #000"></iconify-icon></span></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div><p>Keep the soil evenly moist for the healthiest growth. If the sun gets too
-                                            hot, Chinese cabbage tends to "bolt" or go to seed; in long periods of heat,
-                                            some kind of shade may be helpful. Watch out for snails, as they will harm
-                                            the plants.</p></div>
+                                <div>
+                                    <p>Keep the soil evenly moist for the healthiest growth. If the sun gets too
+                                        hot, Chinese cabbage tends to "bolt" or go to seed; in long periods of heat,
+                                        some kind of shade may be helpful. Watch out for snails, as they will harm
+                                        the plants.</p>
+                                </div>
                             </div>
 
                             <div class="col-lg-2 time">30 Apr, 2021</div>
                         </div>
 
-                    </div><hr>
+                    </div>
+                    <hr>
 
                     <div class="review">
                         <div class="row justify-content-between">
@@ -642,13 +687,16 @@
 
                                     </div>
                                 </div>
-                                <div><p> Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.</p></div>
+                                <div>
+                                    <p> Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.</p>
+                                </div>
                             </div>
 
                             <div class="col-lg-2 time">2 min ago</div>
                         </div>
 
-                    </div><hr>
+                    </div>
+                    <hr>
 
                     <div class="review">
                         <div class="row justify-content-between">
@@ -675,10 +723,12 @@
 
                                     </div>
                                 </div>
-                                <div><p>200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO
-                                            Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi,
-                                            from USA
-                                        </p></div>
+                                <div>
+                                    <p>200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO
+                                        Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi,
+                                        from USA
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="col-lg-2 time">2 min ago</div>
@@ -695,7 +745,7 @@
 
 
 
-<!-- ========== START RELATED PRODUCTS ========== -->
+    <!-- ========== START RELATED PRODUCTS ========== -->
     <section id="related_products">
         <div class="container">
             <div class="head">
@@ -890,14 +940,37 @@
                         <span class="heart"><iconify-icon icon="bi:heart" width="18" height="18"></iconify-icon></span>
                     </div>
                 </div>
-                </div>
-                
-
             </div>
+
+
+        </div>
         </div>
     </section>
     <!-- ========== END RELATED PRODUCTS ========== -->
 
+
+
+    <!-- =============== NEWS LETTER START ==================== -->
+    <section id="newsletter">
+        <div class="container">
+            <div class="row justify-content-between align-items-center content_wrapper">
+                <div class="col-lg-2" image>
+                    <a href="#"><img class="img-fluid" src="./assets/images/Logo.png" alt=""></a>
+                </div>
+                <div class="col-lg-4 letter">
+                    <h4>Subcribe our Newsletter</h4>
+                    <p>Pellentesque eu nibh eget mauris congue mattis matti.</p>
+                </div>
+                <div class="col-lg-5 subscribe">
+                    <form action="">
+                        <input type="text" placeholder="Your email address">
+                        <button>Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =============== NEWS LETTER END ==================== -->
 
 
 
@@ -959,7 +1032,7 @@
             <div>
                 <div class="row justify-content-between">
                     <div class="col-lg-5 pt-3 copyright">
-                        <p>Ecobazar eCommerce © 2021. All Rights Reserved</p>
+                        <p>Ecobazar eCommerce Designed by Muntahina Tiha</p>
                     </div>
 
                     <div class="col-lg-4 pt-3 payment">
@@ -979,6 +1052,7 @@
 
 
 
+
     <!-- JQUERY -->
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <!-- ICONIFY -->
@@ -986,7 +1060,7 @@
     <!-- BOOTSTRAP JS -->
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <!-- SLICK SLIDER JS -->
-    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/slick.min.js "></script>
     <!-- CATEGORY FILTER -->
     <script src="./assets/js/category-filter.js"></script>
     <!-- ZOOM -->
@@ -996,9 +1070,103 @@
     <script src="./assets/jquery.countdown-2.2.0/jquery.countdown.min.js"></script>
     <!-- VENO BOX -->
     <script src="./assets/Yet-Another-jQuery-Responsive-Lightbox-Plugin-VenoBox/src/venobox.esm.js"></script>
-
     <!-- APP JS -->
     <script src="./assets/js/app.js"></script>
+    <script>
+          
+
+  // IN STOCK
+  $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    vertical: true,
+    dots: false,
+    centerMode: false,
+    centerPadding: '0px',
+    arrows: true,
+    prevArrow: `<span class="top"><iconify-icon icon="iconamoon:arrow-up-2-thin" width="24" height="24"></iconify-icon></span>`,
+    nextArrow: `<span class="down"><iconify-icon icon="iconamoon:arrow-down-2-thin" width="24" height="24"></iconify-icon></span>`,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          vertical: false,
+          arrows: false,
+        }
+      },
+    ]
+  });
+
+
+  
+
+  // ZOOM
+  $(function () {
+    $(".example").imagezoomsl();
+  });
+
+  // start
+
+  let qty = 5;
+  const qtyEl = document.getElementById("qty");
+  const plusBtn = document.getElementById("plus");
+  const minusBtn = document.getElementById("minus");
+
+  function updateButtons() {
+    // ✅ যখন qty = 1, minus button এ no symbol
+    if (qty <= 1) {
+      minusBtn.style.cursor = "not-allowed";
+      minusBtn.style.opacity = "0.5";
+    } else {
+      minusBtn.style.cursor = "pointer";
+      minusBtn.style.opacity = "1";
+    }
+
+    // ✅ যখন qty = 5, plus button এ no symbol
+    if (qty >= 5) {
+      plusBtn.style.cursor = "not-allowed";
+      plusBtn.style.opacity = "0.5";
+    } else {
+      plusBtn.style.cursor = "pointer";
+      plusBtn.style.opacity = "1";
+    }
+  }
+
+  plusBtn.addEventListener("click", () => {
+    if (qty < 5) {
+      qty++;
+      qtyEl.textContent = qty;
+      updateButtons();
+    }
+  });
+
+  minusBtn.addEventListener("click", () => {
+    if (qty > 1) {
+      qty--;
+      qtyEl.textContent = qty;
+      updateButtons();
+    }
+  });
+
+  // প্রথমে call করা হচ্ছে যাতে initial state ঠিক থাকে
+  updateButtons();
+
+  //IN STOCK END
+
+    </script>
 </body>
 
 </html>
