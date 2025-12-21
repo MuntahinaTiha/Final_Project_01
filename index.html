@@ -87,33 +87,20 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="cart_parent">
-                        <div>
-                            <span><iconify-icon icon="bi:heart" width="35" height="33"></iconify-icon></span>
+                        <div class="wishlist_icon">
+                            <a href="#"><span><iconify-icon icon="bi:heart" width="35"
+                                        height="33"></iconify-icon></span></a>
+                            <!-- <span id="wishlistCount">0</span> -->
                         </div>
                         <div class="second_divider"></div>
                         <div class="shopping_bag">
-                            <!-- <span><iconify-icon icon="teenyicons:bag-outline" width="30" height="30"></iconify-icon></span>
-                            <span class="count">2</span> -->
-
-                            <!-- Cart Icon (toggle manually) -->
-                            <div class="">
-                                <button class="btn position-relative" data-bs-toggle="offcanvas"
-                                    data-bs-target="#cartOffcanvas" style="padding: 0">
-                                    <iconify-icon icon="teenyicons:bag-outline" width="28"></iconify-icon>
-                                    <span id="cartCount" class="count position-absolute start-100  badge">0</span>
-                                </button>
-                            </div>
-
+                            <span style="cursor: pointer;" class="cart-icon" id="cartToggleDesktop"><iconify-icon
+                                    icon="teenyicons:bag-outline" width="30" height="30"></iconify-icon></span>
+                            <span id="cartCountDesktop" class="count cart-badge">0</span>
                             <div class="shop">
                                 <p class="shopping_text mb-0">Shopping cart:</p>
                                 <b id="cartSubtotalNav" class="price">$0</b>
                             </div>
-
-
-                            <!-- <div class="shop">
-                                <p class="shopping_text mb-0">Shopping cart:</p>
-                                <b class="price">$57.00</b>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -123,36 +110,46 @@
     <!-- =============== HEADING TWO END ==================== -->
 
 
+     <!-- Notification Toast -->
+    <div id="toast" class="toast-message"></div>
+
+
     <!-- =============== CART SIDEBAR START  ==================== -->
-    <!-- Bootstrap Offcanvas Cart -->
-    <div class="offcanvas offcanvas-end p-3" tabindex="-1" id="cartOffcanvas">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Shopping Cart (<span id="itemCount">0</span>)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <!-- ========== Start cart_sidebar ========== -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart <span>(<b id="header_item">0</b>)</span></h3>
+            <button id="closeCart" class="close_btn btn-close"></button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Items will be injected here (image, name, price, qty shown as text, remove) -->
         </div>
 
-        <div class="offcanvas-body d-flex flex-column justify-content-between">
-            <div id="cartItems" class="cart-items flex-grow-1"></div>
-
-            <div class="cart-footer border-top pt-3">
-                <div class="d-flex justify-content-between">
-                    <span id="productCount">0 Product</span>
-                    <strong id="cartTotal">$0.00</strong>
+        <div class="cart-footer">
+            <div class="subtotal-row">
+                <div>
+                    <span id="item_number">0</span>
+                    <span>products</span>
                 </div>
-                <div class="mt-3 d-grid gap-2">
-                    <a href="checkout.html" class="btn btn-success rounded-pill py-2">Checkout</a>
-                    <a href="cart.html" class="btn btn-outline-success rounded-pill py-2">Go To Cart</a>
+                <div>
+                    <strong id="cartSubtotal">0.00</strong>
                 </div>
             </div>
+
+            <div class="cart-actions">
+                <a class="checkout" href="checkout.html">Checkout</a>
+                <a class="" href="cart.html" id="goToCart" class="btn primary">Go to Cart</a>
+            </div>
         </div>
-    </div>
+    </aside>
+    <!-- ========== End cart_sidebar ========== -->
     <!-- =============== CART SIDEBAR END  ==================== -->
 
 
     <!-- =============== NAVIGATION START ==================== -->
     <nav id="nav" class="navbar navbar-expand-lg p-0">
         <div class="container">
-
+            
             <a href="index.html" class="d-lg-none">
                 <img src="./assets/images/Logo.png" alt="">
             </a>
@@ -689,484 +686,424 @@
 
 
 
-    <!-- =============== PRODUCT START ==================== -->
+
+
+    <!-- ========== Start product ========== -->
     <section id="product">
         <div class="container">
-
-            <div class="heading">
+            <div class="head">
                 <h4>Introducing Our Products</h4>
-                <div class="btn_wrapper">
+                <div class="filter_button">
                     <button class="category-button" data-filter="all">All</button>
-                    <button class="category-button" data-filter="veg">Vegetable</button>
-                    <button class="category-button" data-filter="cat-2">Fruit</button>
-                    <button class="category-button" data-filter="cat-0">Meat & Fish</button>
+                    <button class="category-button" data-filter="vagetable"> Vegetable</button>
+                    <button class="category-button" data-filter="fruit">Fruit</button>
+                    <button class="category-button" data-filter="meat">Meat & Fish</button>
                 </div>
             </div>
 
-            <div>
-                <div class="row ">
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter cat-2">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/1.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Green Apple</h4>
+            <div class="row product_boxes">
+                <div class="product filter_body col-lg-3 p-0" data-stock="false" data-id="Green Apple"
+                    data-name="Green Apple" data-price="14.99" data-img="./assets/images/products/1.png">
+                    <div class="filter fruit">
+                        <span class="sale">Sale 50%</span>
+                        <a href="stock.html">
+                            <img class="img-fluid" src="./assets/images/products/1.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Apple</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
-
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter cat-2">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/2.png">
-                            </a>
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Surjapur Mango</h4>
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Fresh Mango"
+                    data-name="Fresh Mango" data-price="14.99" data-img="./assets/images/products/2.png">
+                    <div class="filter fruit">
+                        <span class="sale">Sale 50%</span>
+                        <a href="stock.html">
+                            <img class="img-fluid" src="./assets/images/products/2.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Fresh Mango</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
-
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
-
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/3.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Red Tomatos</h4>
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Red Tomatos"
+                    data-name="Red Tomatos" data-price="14.99" data-img="./assets/images/products/3.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="stock.html">
+                            <img class="img-fluid" src="./assets/images/products/3.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Red Tomatos</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
-
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/4.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Fresh Cauliflower</h4>
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Fresh Cauliflower"
+                    data-name="Fresh Cauliflower" data-price="14.99" data-img="./assets/images/products/4.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="stock.html">
+                            <img class="img-fluid" src="./assets/images/products/4.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Fresh Cauliflower</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
+                </div>
 
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/5.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Green Lettuce</h4>
+            </div>
+            <div class="row product_boxes">
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Green Lettuce"
+                    data-name="Green Lettuce" data-price="14.99" data-img="./assets/images/products/5.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="./stock.html">
+                            <img class="img-fluid" src="./assets/images/products/5.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Lettuce</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Green Capsicum"
+                    data-name="Green Capsicum" data-price="14.99" data-img="./assets/images/products/6.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="./stock.html">
 
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/6.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Bell Paper</h4>
+                            <img class="img-fluid" src="./assets/images/products/6.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Capsicum</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Green Chilli"
+                    data-name="Green Chilli" data-price="14.99" data-img="./assets/images/products/7.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="./stock.html">
 
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/7.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Green Chilli</h4>
+                            <img class="img-fluid" src="./assets/images/products/7.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Chilli</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
+                </div>
+                <div class="product filter_body col-lg-3 p-0" data-stock="true" data-id="Eggplant" data-name="Eggplant"
+                    data-price="14.99" data-img="./assets/images/products/8.png">
+                    <div class="filter vagetable">
+                        <span class="sale">Sale 50%</span>
+                        <a href="./stock.html">
 
-                    <div class="col-lg-3 col-6 card_contains">
-                        <div class="filter veg">
-                            <a href="./stock.html">
-                                <img class="img-fluid" style="width: 100%; height: 100%;"
-                                    src="./assets/images/Products/8.png">
-                            </a>
-
-                            <div class=" card_detailts justify-content-between">
-                                <div class="first_content">
-                                    <h4>Eggplant</h4>
+                            <img class="img-fluid" src="./assets/images/products/8.png" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Eggplant</h4>
                                     <b>$14.99</b>
                                     <del>$20.99</del>
-
-                                    <ul class="ratting">
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                        <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                        </li>
-                                    </ul>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="18"
+                                                    height="18"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class=" card_bag">
-                                    <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="24"
-                                                height="24"></iconify-icon></span></a>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="24"
+                                            height="24"></iconify-icon></span>
                                 </div>
                             </div>
-
-                            <div class="icons">
-                                <ul>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="akar-icons:heart" width="20" height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                    <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on left">
-                                            <iconify-icon icon="majesticons:eye-line" width="20"
-                                                height="20"></iconify-icon>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="offer">
-                                <h4>Sale 50%</h4>
-                            </div>
-
                         </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="20" height="20"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="20"
+                                height="20"></iconify-icon></span>
                     </div>
-                    <!-- END -->
-
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- =============== PRODUCT END ==================== -->
+    <!-- ========== End product ========== -->
 
 
 
@@ -1252,292 +1189,262 @@
 
 
     <!-- =============== FEATURED PRODUCT START ==================== -->
-    <section id="f_product">
+     <!-- ========== Start featured_products ========== -->
+    <section id="featured_products">
         <div class="container">
             <div class="head">
                 <h4>Featured Products</h4>
             </div>
-
-            <div class="row f_main justify-content-center">
-
-                <div class="col-lg-2 m-content">
-                    <div class="sec_filter">
+            <div class="row justify-content-between">
+                <div class="product filter_body col-lg-2 p-0" data-stock="false" data-id="Green Apple"
+                    data-name="Green Apple" data-price="14.99" data-img="./assets/images/Featured Products/1.png">
+                    <div class="filter_box">
+                        <span class="sale">Sale 50%</span>
                         <a href="./stock.html">
-                            <img class="img-fluid" style="width: 100%; height: 100%;"
-                                src="./assets/images/Featured Products/1.png">
+                            <img class="img-fluid" style="height: 230px;" src="./assets/images/Featured Products/1.png" alt="">
                         </a>
-
-                        <div class=" f_detailts justify-content-between">
-                            <div class="f_content">
-                                <h4>Green Apple</h4>
-                                <b>$14.99</b>
-                                <del>$20.99</del>
-
-                                <ul class="rate">
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                </ul>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Apple</h4>
+                                    <b>$14.99</b>
+                                    <del>$20.99</del>
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="18"
+                                            height="18"></iconify-icon></span>
+                                </div>
                             </div>
-
-                            <div class="f_bag">
-                                <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="20"
-                                            height="20"></iconify-icon></span></a>
-                            </div>
                         </div>
-
-                        <div class="f_icons">
-                            <ul>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="akar-icons:heart" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="majesticons:eye-line" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="f_offer">
-                            <h4>Sale 50%</h4>
-                        </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="18" height="18"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="18"
+                                height="18"></iconify-icon></span>
                     </div>
                 </div>
-                <!-- END -->
-
-                <div class="col-lg-2 m-content">
-                    <div class="sec_filter">
+                <div class="product filter_body col-lg-2 p-0" data-stock="true" data-id="Fresh Indian Malta"
+                    data-name="Fresh Indian Malta" data-price="20.00" data-img="./assets/images/Featured Products/2.png">
+                    <div class="filter_box">
+                        <span class="sale">Sale 50%</span>
                         <a href="./stock.html">
-                            <img class="img-fluid" style="width: 100%; height: 100%;"
-                                src="./assets/images/Featured Products/2.png">
+                            <img class="img-fluid" style="height: 230px;" src="./assets/images/Featured Products/2.png" alt="">
                         </a>
-
-                        <div class=" f_detailts justify-content-between">
-                            <div class="f_content">
-                                <h4> Indian Malta</h4>
-                                <b>$14.99</b>
-                                <del>$20.99</del>
-
-                                <ul class="rate">
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                </ul>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Fresh Indian Malta</h4>
+                                    <b>$20.00</b>
+                                    <!-- <del>$20.99</del> -->
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 bag_icon ">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="18"
+                                            height="18"></iconify-icon></span>
+                                </div>
                             </div>
-
-                            <div class="f_bag">
-                                <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="20"
-                                            height="20"></iconify-icon></span></a>
-                            </div>
                         </div>
-
-                        <div class="f_icons">
-                            <ul>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="akar-icons:heart" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="majesticons:eye-line" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="f_offer">
-                            <h4>Sale 50%</h4>
-                        </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="18" height="18"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="18"
+                                height="18"></iconify-icon></span>
                     </div>
                 </div>
-                <!-- END -->
-
-                <div class="col-lg-2 m-content">
-                    <div class="sec_filter">
+                <div class="product filter_body col-lg-2 p-0" data-stock="true" data-id="Chinese cabbage"
+                    data-name="Chinese cabbage" data-price="12.00" data-img="./assets/images/Featured Products/3.png">
+                    <div class="filter_box">
+                        <span class="sale">Sale 50%</span>
                         <a href="./stock.html">
-                            <img class="img-fluid" style="width: 100%; height: 100%;"
-                                src="./assets/images/Featured Products/3.png">
+                            <img class="img-fluid" style="height: 230px;" src="./assets/images/Featured Products/3.png" alt="">
                         </a>
-
-                        <div class=" f_detailts justify-content-between">
-                            <div class="f_content">
-                                <h4>Chinese cabbage</h4>
-                                <b>$14.99</b>
-                                <del>$20.99</del>
-
-                                <ul class="rate">
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                </ul>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Chinese cabbage</h4>
+                                    <b>$12.00</b>
+                                    <!-- <del>$20.99</del> -->
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 bag_icon">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="18"
+                                            height="18"></iconify-icon></span>
+                                </div>
                             </div>
-
-                            <div class="f_bag">
-                                <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="20"
-                                            height="20"></iconify-icon></span></a>
-                            </div>
                         </div>
-
-                        <div class="f_icons">
-                            <ul>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="akar-icons:heart" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="majesticons:eye-line" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="f_offer">
-                            <h4>Sale 50%</h4>
-                        </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="18" height="18"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="18"
+                                height="18"></iconify-icon></span>
                     </div>
                 </div>
-                <!-- END -->
-
-                <div class="col-lg-2 m-content">
-                    <div class="sec_filter">
+                <div class="product filter_body col-lg-2 p-0" data-stock="true" data-id="Green Lettuce"
+                    data-name="Green Lettuce" data-price="14.99" data-img="./assets/images/Featured Products/4.png">
+                    <div class="filter_box">
+                        <span class="sale">Sale 50%</span>
                         <a href="./stock.html">
-                            <img class="img-fluid" style="width: 100%; height: 100%;"
-                                src="./assets/images/Featured Products/4.png">
+                            <img class="img-fluid" style="height: 230px;" src="./assets/images/Featured Products/4.png" alt="">
                         </a>
-
-                        <div class=" f_detailts justify-content-between">
-                            <div class="f_content">
-                                <h4>Green Lettuce</h4>
-                                <b>$14.99</b>
-                                <del>$20.99</del>
-
-                                <ul class="rate">
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                </ul>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center ">
+                                <div class="col-8">
+                                    <h4 class="m-0">Green Lettuce</h4>
+                                    <b>$14.99</b>
+                                    <!-- <del>$20.99</del> -->
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 bag_icon">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="18"
+                                            height="18"></iconify-icon></span>
+                                </div>
                             </div>
-
-                            <div class="f_bag">
-                                <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="20"
-                                            height="20"></iconify-icon></span></a>
-                            </div>
                         </div>
-
-                        <div class="f_icons">
-                            <ul>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="akar-icons:heart" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="majesticons:eye-line" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="f_offer">
-                            <h4>Sale 50%</h4>
-                        </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="18" height="18"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="18"
+                                height="18"></iconify-icon></span>
                     </div>
                 </div>
-                <!-- END -->
-
-                <div class="col-lg-2 m-content">
-                    <div class="sec_filter">
+                <div class="product filter_body col-lg-2 p-0" data-stock="true" data-id="Eggplant" data-name="Eggplant"
+                    data-price="14.99" data-img="./assets/images/Featured Products/5.png">
+                    <div class="filter_box">
+                        <span class="sale">Sale 50%</span>
                         <a href="./stock.html">
-                            <img class="img-fluid" style="width: 100%; height: 100%;"
-                                src="./assets/images/Featured Products/5.png">
+                            <img class="img-fluid" style="height: 230px;" src="./assets/images/Featured Products/5.png" alt="">
                         </a>
-
-                        <div class=" f_detailts justify-content-between">
-                            <div class="f_content">
-                                <h4>Egg <br> plant</h4>
-                                <b>$14.99</b>
-                                <del>$20.99</del>
-
-                                <ul class="rate">
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                    <li><iconify-icon icon="basil:star-solid" width="15" height="15"></iconify-icon>
-                                    </li>
-                                </ul>
+                        <div class="details">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-8">
+                                    <h4 class="m-0">Eggplant</h4>
+                                    <b>$14.99</b>
+                                    <!-- <del>$20.99</del> -->
+                                    <div class="rate">
+                                        <ul>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                            <li>
+                                                <iconify-icon icon="material-symbols-light:star" width="16"
+                                                    height="16"></iconify-icon>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 bag_icon">
+                                    <span class="bag add-to-cart"><iconify-icon icon="teenyicons:bag-outline" width="18"
+                                            height="18"></iconify-icon></span>
+                                </div>
                             </div>
-
-                            <div class="f_bag">
-                                <a href="#"><span><iconify-icon icon="heroicons:shopping-bag" width="20"
-                                            height="20"></iconify-icon></span></a>
-                            </div>
                         </div>
-
-                        <div class="f_icons">
-                            <ul>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="akar-icons:heart" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                                <li><button data-bs-toggle="tooltip" data-bs-placement="left"
-                                        data-bs-title="Tooltip on left">
-                                        <iconify-icon icon="majesticons:eye-line" width="15" height="15"></iconify-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="f_offer">
-                            <h4>Sale 50%</h4>
-                        </div>
+                        <span class="eye"><iconify-icon icon="bi:eye" width="18" height="18"></iconify-icon></span>
+                        <span class="heart add-to-wishlist"><iconify-icon icon="bi:heart" width="18"
+                                height="18"></iconify-icon></span>
                     </div>
                 </div>
-                <!-- END -->
-
             </div>
         </div>
     </section>
+    <!-- ========== End featured_products ========== -->
     <!-- =============== FEATURED PRODUCT END ==================== -->
 
 
@@ -1573,7 +1480,7 @@
 
 
     <!-- =============== IN STOCK START ==================== -->
-   
+
     <!-- =============== IN STOCK END ==================== -->
 
 
